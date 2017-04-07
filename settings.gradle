@@ -1,0 +1,4 @@
+rootProject.name = 'war-paths-poc'
+include 'war-resteasy'
+include 'war-dep1'
+include 'war-cxf'
