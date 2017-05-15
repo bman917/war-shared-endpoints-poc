@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: "war"
+
+repositories {
+    jcenter()
+}
+
+war {
+    baseName = "war-resteasy"
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.13'
+	compile group: 'javax.enterprise', name: 'cdi-api', version: '1.1-PFD'
+	compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '3.1.0.Final'
+	compile(group: 'org.jboss.resteasy', name: 'resteasy-servlet-initializer', version: property('rest.resteasy-servlet-initializer.version'))
+	compile(group: 'org.jboss.resteasy', name: 'resteasy-jaxb-provider', version: property('rest.resteasy-jaxb-provider.version'))
+	compile group: 'org.jboss.resteasy', name: 'resteasy-jackson-provider', version: '3.1.0.Final'
+	compile group: 'org.springframework', name: 'spring-web', version: '4.3.1.RELEASE'
+	
+    testCompile 'junit:junit:4.12'
+
+    compile project(':module1-endpoints')
+    compile project(':module2-serviceImpl')
+}
