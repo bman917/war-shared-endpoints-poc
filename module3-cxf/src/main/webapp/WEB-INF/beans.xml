@@ -13,12 +13,12 @@
        http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd">
-
+       
   <import resource="classpath:META-INF/cxf/cxf.xml"/>
   <context:property-placeholder/>
   <context:annotation-config/>
   
-  <bean class="com.warcxf.CxfAppConfig"/>
+  <bean class="com.warcxf.CxfAppConfig"/>  
   
   <jaxrs:server id="services" address="/rest">
     <jaxrs:serviceBeans>
